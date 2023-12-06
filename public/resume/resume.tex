@@ -1,0 +1,252 @@
+%------------------------
+  % Resume in Latex
+  % Author: Jake Gutierrez
+  % Based off of: https://github.com/sb2nov/resume
+  % License: MIT
+  %------------------------
+
+  \documentclass[letterpaper,11pt]{article}
+
+  \usepackage{latexsym}
+  \usepackage[empty]{fullpage}
+  \usepackage{titlesec}
+  \usepackage{marvosym}
+  \usepackage[usenames,dvipsnames]{color}
+  \usepackage{verbatim}
+  \usepackage{enumitem}
+  \usepackage[hidelinks]{hyperref}
+  \usepackage{fancyhdr}
+  \usepackage[english]{babel}
+  \usepackage{tabularx}
+  \usepackage{fontawesome5}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{-3.0pt}
+  \setlength{\columnsep}{-1pt}
+  \input{glyphtounicode}
+  \usepackage{ragged2e}
+
+  \usepackage{xcolor}
+  \hypersetup{colorlinks,urlcolor=blue}
+
+
+  %----------FONT OPTIONS----------
+  % sans-serif
+  % \usepackage[sfdefault]{FiraSans}
+  % \usepackage[sfdefault]{roboto}
+  % \usepackage[sfdefault]{noto-sans}
+  % \usepackage[default]{sourcesanspro}
+
+  % serif
+  % \usepackage{CormorantGaramond}
+  \usepackage{charter}
+
+
+  \pagestyle{fancy}
+  \fancyhf{} % clear all header and footer fields
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+
+  % Adjust margins
+  \addtolength{\oddsidemargin}{-0.7in}
+  \addtolength{\evensidemargin}{-0.7in}
+  \addtolength{\textwidth}{1in}
+  \addtolength{\topmargin}{-.7in}
+  \addtolength{\textheight}{1.0in}
+
+  \urlstyle{same}
+
+  \raggedbottom
+  \raggedright
+  \setlength{\tabcolsep}{0in}
+
+  % Sections formatting
+  \titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large
+  }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+  % Ensure that generate pdf is machine readable/ATS parsable
+  \pdfgentounicode=1
+
+  %-------------------------
+  % Custom commands
+  \newcommand{\resumeItem}[1]{
+    \item\small{
+      {#1 \vspace{-2pt}}
+    }
+  }
+  \hypersetup{%
+    colorlinks=true,% hyperlinks will be colored
+    linkcolor=blue,% hyperlink text will be green
+    linkbordercolor=blue,% hyperlink border will be red
+  }
+
+  \newcommand{\resumeSubheading}[4]{
+    \vspace{-2pt}\item
+      \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        {#1} & #2 \\
+        \textit{\small#3} & \textit{\small #4} \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeSubSubheading}[2]{
+      \item
+      \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \textit{\small#1} & \textit{\small #2} \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeProjectHeading}[2]{
+      \item
+      \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+        \small#1 & #2 \\
+      \end{tabular*}\vspace{-7pt}
+  }
+
+  \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+  \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+  \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+  \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+  \newcommand{\resumeItemListStart}{\begin{itemize}}
+  \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+  %-------------------------------------------
+  %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+  \textbf{\Huge \scshape AYUSH SONI} \\ \vspace{1pt}
+  \href{tel:9644963410}{+91 9644963410} $|$
+  {Indore, India} $|$
+  {Full Stack Developer} $|$
+  \href{mailto:ayushsoni1010.work@gmail.com}{ayushsoni1010.work@gmail.com} \\ \vspace{1pt}
+
+  \href{https://linkedin.com/in/ayushsoni1010}{\underline{linkedin.com/in/ayushsoni1010}} $|$
+  \href{https://github.com/ayushsoni1010}{\underline{github.com/ayushsoni1010}} $|$
+  \href{https://twitter.com/ayushsoni1010}{\underline{twitter.com/ayushsoni1010}} $|$
+  \href{https://ayushsoni1010.com}{\underline{ayushsoni1010.com}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Medi-Caps University}{Indore, Madhya Pradesh}
+{Bachelor of Technology in Computer Science and Engineering}{September 2020 -- July 2024}
+\resumeSubHeadingListEnd
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: Javascript, Typescript, Go, Java } \\
+        \vspace{1pt}\textbf{Libraries/Frameworks}{: React, Redux, Vue, Next, Nuxt, Nest, NodeJS, Express, ChartJS, Prisma, SCSS, Tailwind} \\
+        \vspace{1pt}\textbf{Databases}{: MongoDB, MySQL} \\
+        \vspace{1pt}\textbf{Platforms/Tools}{: AWS, GCP, Netlify, GitHub Pages, Vercel, Git, CI/CD, Figma, Strapi, Storybook, Postman, Docker } \\
+        \vspace{1pt}\textbf{Other}{: Mentoring, Freelancing, UI-UX Designing, Open-Source, Cloud Computing, Public Speaking, Web Scraping}
+        }}
+\end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+\resumeSubheading
+{\textbf{\href{https://fifhtry.com}{FifthTry}\hspace{5pt}}{{[Rust]}}}{Remote, Bengaluru}
+{Developer Relations Engineer – Full time}{April 2023 -- September 2023}
+\resumeItemListStart
+\resumeItem{Spearheaded strategic enhancements, built numerous sample apps with fastn, and handled other engineering tasks}
+\resumeItem{Led documentation site development, conducted developer training, enhanced the fastn framework written in Rust}
+\resumeItem{Curated nationwide events, managed marketing efforts, fostered community growth, and handled client relations.}
+\resumeItemListEnd
+
+
+\resumeSubheading
+{\textbf{\href{https://magic.app}{Magic}\hspace{3pt}}{{[NuxtJS, NodeJS, Parse Server]}}}{Remote, Delhi}
+% {Magic}{Remote, Delhi}
+{Product Engineer – Intern}{January 2023 -- March 2023}
+\resumeItemListStart
+\resumeItem{Worked on a dashboard application based on a SaaS product that helps Slack communities without leaving slack. }
+\resumeItem{Worked on creating sitemaps for the product, auth and password recovery feature, and frontend UI improvements. }
+\resumeItem{Implemented security measures of LogRocket and introduced events module feature for hosting community events.}
+\resumeItemListEnd
+
+
+\resumeSubheading
+{\textbf{\href{https://economize.cloud}{Economize}\hspace{3pt}}{{[Vue, Go]}}}{Remote, Bengaluru}
+% {Economize}{Remote, Bengaluru}
+{Software Engineer – Intern}{October 2021 -- November 2022}
+\resumeItemListStart
+\resumeItem{Worked on a dashboard application based on a SaaS product to optimize and manage cloud costs for AWS and GCP.}
+\resumeItem{Improved UI: docs website, AWS/GCP cost-reports tables, dashboard, website, and GCP cloud assets backend fixes.}
+\resumeItem{Implemented wrapper components using Ant Design library and ChartJs, configured storybook and strapi setup.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{\href{https://github.com/spendify-io}{Spendify}\hspace{5pt}}{[NextJS, NestJS, Chakra UI]}}{}
+\resumeItemListStart
+\resumeItem{Working on a full stack application, a minimal expense tracker web app built to track and manage expenditures.}
+\resumeItem{Developing features including expense tracking, budgeting, proposals, and beautiful invoices for freelancers.}
+\resumeItem{Provides better payment and bills tracking, remainders for upcoming payments, and analyzes financial expenses.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{\href{https://github.com/ayushsoni1010/mapsearchify}{MapSearchify}\hspace{5pt}}{{[Vue, NuxtJS, Algolia, TypeScript, MapboxGL.js, Tailwind]}}}{}
+\resumeItemListStart
+\resumeItem{It is a web-based application that utilizes the MapboxGL Maps API to provide location-based search functionality.}
+\resumeItem{Many people are located on Map like a Snapchat Map feature with an optimized search utility built using Algolia.}
+\resumeItem{Users can search for nearby places and filter results by country, city, name, company and maps the user's location.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{\href{https://github.com/ayushsoni1010/moviemania}{Movie Mania}\hspace{5pt}}{{[React, TMDB, styled-components, TypeScript]}}}{}
+\resumeItemListStart
+\resumeItem{Utilized the API to fetch movie data and provides features like movie ratings, trailers, cast details, and much more.}
+\resumeItem{Developed the custom hooks for a web-based application for searching and exploring movies and TV shows.}
+\resumeItem{Responsive design ensures seamless UX across devices and features including movie ratings, trailers, cast details.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------Awards, Community and Volunteer Experience---------------
+\section{AWARDS, COMMUNITY \& VOLUNTEER EXPERIENCE}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \resumeItemListStart
+                \resumeItem{\textbf{\href{https://mlh.io}{Major League Hacking}}{: Participated in multiple hackathons organized by MLH like Abracadabra Hacks, MLH INIT, Local Hack Day, Design-a-thon, Wittyhacks and attended MLH HackCon IN conference in-person in Delhi.}} \vspace{2pt}
+                \resumeItem{\textbf{\href{https://studentambassadors.microsoft.com/}{Microsoft Learn Student Ambassador}}{: Conducted hands-on sessions on Git, GitHub, frontend development, open source contribution, taught best practices and promoted Hacktoberfest, and built hands-on projects.}} \vspace{2pt}
+                \resumeItem{\textbf{Mentor at {\href{https://hackacode.anyonecanco.de}{AnyoneCanCo.de}}, {\href{https://hackthenorth.com}{HackTheNorth}}, {\href{https://swoc.scriptindia.org}{Script Winter of Code}}, {\href{https://gdsc.community.dev/medi-caps-university-indore}{GDSC Medicaps}}:}
+ {I've mentored aspiring developers, and designers in hackathons and open-source programs, helping them build innovative projects.}} \vspace{2pt}
+                \resumeItem{\textbf{\href{https://devpost.com/software/budgetstay}{Hackathon Winner at HackThisFall for Most Creative Use of Twilio}}} \vspace{2pt}
+      \resumeItemListEnd
+    }}
+ \end{itemize}
+
+\end{document}
