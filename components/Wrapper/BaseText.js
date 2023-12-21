@@ -26,31 +26,7 @@ const BaseText = ({
           >
             {firstTitle}
           </Text>
-          <Text
-            fontSize={{
-              base: "5xl",
-              lg: "5xl",
-              md: "5xl",
-              sm: "4xl",
-              xs: "4xl",
-            }}
-            fontWeight="900"
-            color="teal.400"
-            position="absolute"
-            top="45"
-          >
-            {secondTitle}
-          </Text>
         </VStack>
-        <Image
-          src={textIcon}
-          w="100"
-          h="100"
-          alt="AboutMe"
-          position="relative"
-          left={leftSpacing}
-          top={2 + topSpacing}
-        />
       </Flex>
     </React.Fragment>
   );

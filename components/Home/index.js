@@ -15,12 +15,14 @@ import BaseLayout from "../Wrapper/BaseLayout";
 import Skills from "./Skills";
 import Timeline from "./Timeline";
 import { productCardDetails } from "./__productCardDetails";
-
+import About from "./about";
+import Project from "../../pages/blogs";
 import { IoIosRocket } from "react-icons/io";
 
 const Home = () => {
   return (
     <React.Fragment>
+      <About />
       <BaseLayout mt="10" id="stack">
         <Heading
           fontSize={{
@@ -93,9 +95,11 @@ const Home = () => {
           </Grid>
         </Box>
       </BaseLayout>
+
       <Skills />
 
       <Timeline />
+      {/* <Project /> */}
     </React.Fragment>
   );
 };

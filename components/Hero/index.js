@@ -2,6 +2,8 @@ import React from "react";
 import dynamic from "next/dynamic";
 import VoxelDogLoader from "../DevDog/blender-dog";
 import BaseLayout from "../Wrapper/BaseLayout";
+import { ReactSVG } from "react-svg";
+import Image from "next/image";
 import {
   Button,
   VStack,
@@ -21,134 +23,58 @@ const LazyVoxelDog = dynamic(() => import("../DevDog"), {
 const Hero = () => {
   return (
     <React.Fragment>
-      <BaseLayout>
-        <VStack
-          m="auto"
-          my="10"
-          mt={{ base: 10, md: 10, lg: 10, sm: 10, xs: "4em" }}
-          zIndex="100"
-        >
-          <Link
-            href="https://github.com/seniorfullstack-dev
-"
-            textDecoration="none"
-            isExternal={true}
-            style={{ textDecoration: "none" }}
-          >
-            <Button
-              borderRadius="full"
-              borderColor="blue.600"
-              h="30px"
-              fontSize={{ base: "sm", sm: "sm", xs: "xs" }}
-              borderWidth="2px"
-            >
-              Hello, I&apos;m a Full Stack Developer
-            </Button>
-          </Link>
-        </VStack>
-        <Flex
-          // display={{ base: "flex", md: "flex", sm: "block", xs: "block" }}
-          flex={{ base: 1, md: 1, sm: 0, xs: 0 }}
-          justify="space-between"
-          direction={{
-            base: "row",
-            md: "row",
-            sm: "column-reverse",
-            xs: "column-reverse",
-          }}
-        >
-          <Stack>
-            <Heading
-              fontSize={{ md: "6xl", lg: "6xl", sm: "4xl", xs: "3xl" }}
-              fontWeight="extrabold"
-            >
-              <Stack display="flex" direction="row">
-                <Text colorScheme="black">I&apos;m</Text>
-                <Text
-                  bgGradient="linear(to-tr, teal.500, green.400)"
-                  bgClip="text"
+      <section className="gMXkzA">
+        <div className="kTUali"></div>
+        <div id="home" className="irvPSY">
+          <img src="/flower.svg" height={"564"} width={"440"} />
+        </div>
+        <div className="Jdby">
+          <ReactSVG src="/mountain.svg" />
+        </div>
+        <div className="bEoNtC">
+          <img src="/sun.svg" />
+        </div>
+        <div className="fDDan">
+          <img src="/cloud1.svg" />
+        </div>
+        <div className="fqZNTZ">
+          <img src="/cloud2.svg" />
+        </div>
+
+        <div className="OuVty">
+          <div>
+            <div pagetheme="light" lang="en" className="hRhcyR">
+              <div>
+                <h1>
+                  Hi there, I'm <span lang="en">Andrew</span>
+                  <span>.</span>
+                </h1>
+              </div>
+              <div>
+                <h2> Welcome to my portfolio!</h2>
+              </div>
+              <div>
+                <p>
+                  I'm a Full Stack AI developer who builds interesting and
+                  beautiful websites that help people. My current focus is on
+                  powerful AI/ML technology. I love Japan.
+                </p>
+              </div>
+              <div>
+                <a
+                  pagetheme="light"
+                  href="/Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabindex="0"
                 >
-                  HKR
-                </Text>
-              </Stack>
-              <Stack display="flex" direction="row">
-                <Text colorScheme="black">fullstack</Text>
-                <Text
-                  bgGradient="linear(to-tr, teal.500, green.400)"
-                  bgClip="text"
-                >
-                  developer
-                </Text>
-              </Stack>
-              <Stack display="flex" direction="row">
-                <Text colorScheme="black">and</Text>
-                <Text
-                  bgGradient="linear(to-tr, teal.500, green.400)"
-                  bgClip="text"
-                >
-                  designer.
-                </Text>
-              </Stack>
-            </Heading>
-            <Text py="5" colorScheme="black" fontWeight="400">
-              I design and create{" "}
-              <span
-                style={{
-                  color: "var(--chakra-colors-teal-500)",
-                  fontWeight: 500,
-                }}
-              >
-                functional and beautiful applications
-              </span>{" "}
-              with passion and a focus on{" "}
-              <span
-                style={{
-                  color: "var(--chakra-colors-teal-500)",
-                  fontWeight: 500,
-                }}
-              >
-                user experience
-              </span>{" "}
-              and{" "}
-              <span
-                style={{
-                  color: "var(--chakra-colors-teal-500)",
-                  fontWeight: 500,
-                }}
-              >
-                high quality.
-              </span>{" "}
-            </Text>
-            <ButtonGroup gap="1">
-              <Button
-                as="a"
-                target="_blank"
-                href="strikepunchk@gmail.com"
-                border="2px"
-                variant="outline"
-                size={{ base: "md", md: "md", sm: "sm" }}
-                colorScheme="teal"
-              >
-                Hire me
-              </Button>
-              <Button
-                colorScheme="teal"
-                target="_blank"
-                as="a"
-                href="https://cal.com/seniorfullstack-dev/"
-                variant="solid"
-                size={{ base: "md", md: "md", sm: "sm" }}
-                bgGradient="linear(to-r, teal.500, green.400)"
-              >
-                Schedule a Meeting
-              </Button>
-            </ButtonGroup>
-          </Stack>
-          <Stack>
-            <LazyVoxelDog />
-          </Stack>
-        </Flex>
-      </BaseLayout>
+                  resume
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </React.Fragment>
   );
 };

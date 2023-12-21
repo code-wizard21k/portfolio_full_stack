@@ -11,16 +11,11 @@ export default function Landing() {
     <React.Fragment>
       <Seo title="Portfolio" />
       <Box>
-        <header>
-          <Header />
-        </header>
-        <main>
-          <Hero />
-          <Home />
-        </main>
-        <footer>
-          <Footer />
-        </footer>
+        <Header />
+
+        <Hero />
+        <Home />
+        <Footer />
       </Box>
     </React.Fragment>
   );

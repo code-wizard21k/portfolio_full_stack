@@ -1,295 +1,103 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
+import Link from "next/link";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 import {
   Box,
-  Flex,
-  Divider,
-  Grid,
+  Image,
   Text,
-  Link,
+  Flex,
   Heading,
-  Tag,
   useColorModeValue,
-  HStack,
-  Icon,
-  VStack,
 } from "@chakra-ui/react";
+import Seo from "../components/Seo";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import BaseLayout from "../components/Wrapper/BaseLayout";
 import BaseText from "../components/Wrapper/BaseText";
-import Seo from "../components/Seo";
-import Footer from "../components/Footer";
-import experiencesDetails from "../data/experience/data.json";
 
-import { MdVerified } from "react-icons/md";
-
-const Experience = () => {
+const Blog = (blogsData) => {
   return (
     <React.Fragment>
-      <Seo title="Experience" />
       <Box>
-        <header>
-          <Header />
-        </header>
+        <Seo title="Blogs" />
+        <Box>
+          <header>
+            <Header />
+          </header>
+        </Box>
         <main>
           <BaseLayout>
             <BaseText
-              firstTitle="Experience"
-              secondTitle="Products"
-              textIcon="https://ik.imagekit.io/ayushsoni1010/Website/projects?ik-sdk-version=javascript-1.4.3&updatedAt=1669666353424"
+              firstTitle="Blogs"
+              secondTitle="Content"
+              textIcon="https://ik.imagekit.io/ayushsoni1010/Website/blogs?ik-sdk-version=javascript-1.4.3&updatedAt=1669666499904"
+              topSpacing="2"
             />
-            <Box
-              my="20"
-              display={{
-                base: "inherit",
-                lg: "inherit",
-                md: "inherit",
-                sm: "none",
-                xs: "none",
-              }}
+            <Flex
+              mt="24"
+              justify="space-evenly"
+              flexWrap="wrap"
+              alignItems="start"
+              rowGap="20"
+              gap="10"
             >
-              {experiencesDetails.map((item, index) => {
+              {blogsData.frontmatter.map((item, index) => {
                 return (
-                  <Grid
+                  <Box
                     key={index}
-                    display="grid"
-                    gridTemplateColumns={{
-                      base: "150px 1px 1fr",
-                      md: "150px 1px 1fr",
-                      lg: "150px 1px 1fr",
-                      sm: "150px 1px 1fr",
-                      xs: "150px 1px 1fr",
+                    borderRadius="base"
+                    w="375px"
+                    h={{
+                      base: "440px",
+                      lg: "440px",
+                      md: "440px",
+                      sm: "440px",
+                      xs: "480px",
                     }}
-                    flexDirection="column"
-                    gridColumnGap="80px"
-                    gridRowGap="20px"
+                    overflow="hidden"
+                    bgColor={useColorModeValue("gray.50", "gray.700")}
+                    boxShadow="outline"
+                    transition="ease-in-out"
+                    transitionDuration="0.5s"
+                    _hover={{ boxShadow: "2xl" }}
                   >
-                    <Box alignSelf="center">
-                      <Text textAlign={"left"}>{item.start_date}</Text>
-                      <Text textAlign={"left"}>{item.end_date}</Text>
-                      {item.end_date === "Present" ? (
-                        <Text textAlign={"left"}>
-                          {new Date().getMonth(item.start_date.split(" ")[0]) +
-                            1 -
-                            new Date().getMonth()}{" "}
-                          months
-                        </Text>
-                      ) : (
-                        <Text textAlign={"left"}>{item.duration}</Text>
-                      )}
-                    </Box>
-                    <Box position="relative">
-                      <Divider
-                        variant="dashed"
-                        orientation="vertical"
-                        style={{
-                          borderWidth: "1px",
-                          borderColor: "teal",
-                        }}
-                      />
-                      <Text
-                        w="20px"
-                        h="20px"
-                        boxShadow="base"
-                        borderRadius="full"
-                        backgroundColor="black"
-                        position="absolute"
-                        top="45%"
-                        right="-8.5px"
-                        bgGradient="linear(to-tr, teal.500, green.400)"
-                      ></Text>
-                    </Box>
-                    <Box
-                      borderRadius="base"
-                      p={{ base: 5, lg: 5, md: 5, sm: 4, xs: 4 }}
-                      // pl={{ base: 14, lg: 14, md: 14, sm: 14, xs: 14 }}
-                      position="relative"
-                      // eslint-disable-next-line react-hooks/rules-of-hooks
-                      bgColor={useColorModeValue("white", "gray.700")}
-                      boxShadow="outline"
-                      transition={"ease-in-out"}
-                      transitionDuration="0.5s"
-                      _hover={{ boxShadow: "2xl" }}
-                      my="4"
-                    >
-                      <HStack>
-                        <Heading fontSize="lg">{item.role}</Heading>
-                        <Icon
-                          as={MdVerified}
-                          // eslint-disable-next-line react-hooks/rules-of-hooks
-                          color={useColorModeValue("teal", "white")}
-                        />
-                      </HStack>
-                      <Link isExternal={true} href={item.company_url} mt="2">
-                        <Text
-                          fontSize="md"
-                          textAlign="left"
-                          fontWeight="bold"
-                          // eslint-disable-next-line react-hooks/rules-of-hooks
-                          color={useColorModeValue("teal", "teal.200")}
-                        >
-                          {item.company}
-                        </Text>
-                      </Link>
-                      <Text>{item.location + " (" + item.work_type + ")"}</Text>
-                      <VStack wrap={"wrap"} mt="2" alignItems="flex-start">
-                        {item.role_description.map((item, i) => {
-                          return (
-                            <HStack key={i}>
-                              <Text>{"●"}</Text>
-                              <Text>{item}</Text>
-                            </HStack>
-                          );
-                        })}
-                      </VStack>
-                      <Flex
-                        wrap="wrap"
-                        direction="row"
-                        gap={2}
-                        mt="4"
-                        justify="left"
-                      >
-                        {item.tech_stack.map((tag, i) => {
-                          return (
-                            <Tag key={i} size="lg">
-                              {tag}
-                            </Tag>
-                          );
-                        })}
-                      </Flex>
-                    </Box>
-                  </Grid>
-                );
-              })}
-            </Box>
-            <Box
-              my="20"
-              display={{
-                base: "none",
-                lg: "none",
-                md: "none",
-                sm: "inherit",
-                xs: "inherit",
-              }}
-            >
-              {experiencesDetails.map((item, index) => {
-                return (
-                  <Flex key={index} gap="10">
-                    <Box position="relative">
-                      <Divider
-                        variant="dashed"
-                        orientation="vertical"
-                        style={{
-                          borderWidth: "1px",
-                          borderColor: "teal",
-                        }}
-                      />
-                      <Text
-                        w="20px"
-                        h="20px"
-                        boxShadow="base"
-                        borderRadius="full"
-                        backgroundColor="black"
-                        position="absolute"
-                        top={index === 0 ? "13%" : "7.5%"}
-                        right="-8.5px"
-                        bgGradient="linear(to-tr, teal.500, green.400)"
-                      ></Text>
-                    </Box>
-                    <Flex
-                      display={{
-                        base: "none",
-                        lg: "none",
-                        md: "none",
-                        sm: "flex",
-                        xs: "flex",
-                      }}
-                      flexDirection="column"
-                      mt={10}
-                    >
-                      <Box alignSelf="left">
-                        <Text textAlign={"left"}>
-                          {item.start_date + " -- " + item.end_date}
-                        </Text>
-                        <Text textAlign={"left"}>{}</Text>
-                        {item.end_date === "Present" ? (
-                          <Text textAlign={"left"}>
-                            {new Date().getMonth(
-                              item.start_date.split(" ")[0]
-                            ) +
-                              1 -
-                              new Date().getMonth()}{" "}
-                            months
-                          </Text>
-                        ) : (
-                          <Text textAlign={"left"}>{item.duration}</Text>
-                        )}
-                      </Box>
-                      <Box
+                    <Link key={index} href={item.href} passHref>
+                      <Image
+                        src={item.cover_image}
+                        alt={item.title}
+                        h="250px"
+                        w="full"
                         borderRadius="base"
-                        p={{ base: 5, lg: 5, md: 5, sm: 4, xs: 4 }}
-                        // pl={{ base: 14, lg: 14, md: 14, sm: 14, xs: 14 }}
-                        position="relative"
-                        // eslint-disable-next-line react-hooks/rules-of-hooks
-                        bgColor={useColorModeValue("white", "gray.700")}
-                        boxShadow="outline"
-                        transition={"ease-in-out"}
+                        transition="ease-in-out"
                         transitionDuration="0.5s"
-                        _hover={{ boxShadow: "2xl" }}
-                        my="4"
-                      >
-                        <HStack>
-                          <Heading fontSize="lg">{item.role}</Heading>
-                          <Icon
-                            as={MdVerified}
-                            // eslint-disable-next-line react-hooks/rules-of-hooks
-                            color={useColorModeValue("teal", "white")}
-                          />
-                        </HStack>
-                        <Link isExternal={true} href={item.company_url} mt="2">
-                          <Text
-                            fontSize="md"
-                            textAlign="left"
-                            fontWeight="bold"
-                            // eslint-disable-next-line react-hooks/rules-of-hooks
-                            color={useColorModeValue("teal", "teal.200")}
-                          >
-                            {item.company}
-                          </Text>
-                        </Link>
-                        <Text>
-                          {item.location + " (" + item.work_type + ")"}
-                        </Text>
-                        <VStack wrap={"wrap"} mt="2" alignItems="flex-start">
-                          {item.role_description.map((item, i) => {
-                            return (
-                              <HStack key={i} alignItems={"baseline"}>
-                                <Text>{"●"}</Text>
-                                <Text>{item}</Text>
-                              </HStack>
-                            );
-                          })}
-                        </VStack>
-                        <Flex
-                          wrap="wrap"
-                          direction="row"
-                          gap={2}
-                          mt="4"
-                          justify="left"
-                        >
-                          {item.tech_stack.map((tag, i) => {
-                            return (
-                              <Tag key={i} size="lg">
-                                {tag}
-                              </Tag>
-                            );
-                          })}
-                        </Flex>
-                      </Box>
-                    </Flex>
-                  </Flex>
+                        _hover={{
+                          transform: "scale(1.1)",
+                          cursor: "pointer",
+                          transition: "ease-in-out",
+                          transitionDuration: "0.3s",
+                        }}
+                      />
+                    </Link>
+                    <Box mt="4" p="4">
+                      <Link key={index} href={item.href} passHref>
+                        <Heading fontSize="2xl" cursor="pointer">
+                          {item.title}
+                        </Heading>
+                      </Link>
+                      <Text my="2">{item.date}</Text>
+                      <Text my="2" fontWeight="600">
+                        {item.subtitle}
+                      </Text>
+                    </Box>
+                  </Box>
                 );
               })}
-            </Box>
+            </Flex>
           </BaseLayout>
         </main>
         <footer>
@@ -300,4 +108,39 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export async function getStaticProps() {
+  const files = fs.readdirSync(path.join("data", "blogs"));
+
+  let slug = [];
+  let markdown = [];
+  let matterResult = [];
+  let contentHtml = [];
+  let frontmatter = [];
+
+  files.map((filename) => {
+    slug.push({ name: filename.replace(".mdx", "") });
+    markdown.push(
+      fs.readFileSync(path.join("data", "blogs", filename), "utf-8")
+    );
+  });
+
+  markdown.map(async (item, index) => {
+    matterResult.push(matter(item));
+    frontmatter.push(matterResult[index].data);
+
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult[index].content);
+    contentHtml.push({ content: processedContent.toString() });
+  });
+
+  return {
+    props: {
+      slug,
+      frontmatter,
+      contentHtml,
+    },
+  };
+}
+
+export default Blog;
