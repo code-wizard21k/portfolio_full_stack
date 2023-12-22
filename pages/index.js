@@ -15,7 +15,7 @@ export default function Landing() {
 
         <Hero />
         {/* <Home /> */}
-        <Footer />
+        {/* <Footer /> */}
       </Box>
     </React.Fragment>
   );
